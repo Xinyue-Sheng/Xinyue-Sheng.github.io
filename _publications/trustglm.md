@@ -5,7 +5,7 @@ category: conferences
 permalink: /publication/trustglm
 excerpt: ''
 date: 2025-06-13
-venue: ''
+venue: 'Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V. 2'
 slidesurl: 'http://academicpages.github.io/files/slides1.pdf'
 paperurl: 'http://academicpages.github.io/files/paper1.pdf'
 bibtexurl: 'http://academicpages.github.io/files/bibtex1.bib'
