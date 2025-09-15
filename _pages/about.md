@@ -17,6 +17,7 @@ Outside of research, I enjoy making films, going to theatres and Jazz dancing.
 
 News
 ======
+One paper is accepted to KDD'2025.
 
 <!--
 A data-driven personal website
