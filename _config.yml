@@ -23,7 +23,7 @@ repository               : "Xinyue-Sheng/Xinyue-Sheng.github.io.git"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "/images/personal_web_profile.jpeg"
+  avatar           : "/images/personal_web_profile.jpg"
   name             : "Xinyue Sheng"
   pronouns         : "she/her"  
   bio              : "Hi! I'm Xinyue Sheng, an undergraduate from NYU Shanghai, actively looking for 26Fall PhD positions."
