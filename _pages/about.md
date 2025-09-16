@@ -7,9 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-legally known as 盛欣悦 (Xinyue Sheng)
-
-Hi! I’m a senior pursuing B.S. in Data Science and Mathematics (Double Major) at New York University Shanghai and New York University. I’m fortunate to work in DIRLab with [Prof. Qiaoyu Tan](https://qiaoyu-tan.github.io/) on Robustness of GraphLLMs.
+Hi! I’m a senior pursuing B.S. in Data Science and Mathematics (Double Major) at New York University Shanghai and New York University. I was fortunate to work in DIRLab with [Prof. Qiaoyu Tan](https://qiaoyu-tan.github.io/) on GraphLLMs.
 
 Currently, I am working on multimodal personalized generation under the supervision of [Prof. Qiaoyu Tan](https://qiaoyu-tan.github.io/) and Prof. [Hongyi Wen](https://whongyi.github.io).
 
