@@ -13,8 +13,6 @@ Currently, I am working on multimodal personalized generation under the supervis
 
 I'm actively looking for 26 Fall PhD positions.
 
-Outside of research, I enjoy making films, going to theatres and Jazz dancing.
-
 News
 ======
 Our paper TrustGLM was accepted to KDD 2025.
