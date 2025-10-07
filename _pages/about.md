@@ -11,7 +11,7 @@ Hi! I’m a senior pursuing B.S. in Data Science and Mathematics (Double Major) 
 
 Currently, I am working on multimodal personalized generation under the supervision of [Prof. Qiaoyu Tan](https://qiaoyu-tan.github.io/) and Prof. [Hongyi Wen](https://whongyi.github.io).
 
-My current research interests are LLMs, multimodal intelligence, and graph learning.
+My current research interests are LLMs, multimodal intelligence, trustworthy AI and graph learning.
 
 I'm actively looking for 26 Fall PhD positions.
 
