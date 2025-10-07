@@ -27,7 +27,7 @@ Publication
 [Paper](https://arxiv.org/abs/2407.12345) · [Code](https://github.com/Palasonic5/TrustGLM.git)
 
 <div style="text-align: center; margin-top: 15px; margin-bottom: 20px;">
-  <img src="tree/master/images/trustglm.png" alt="TrustGLM Figure" width="420" style="border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+  <img src="Xinyue-Sheng.github.io/images/trustglm.png" alt="TrustGLM Figure" width="420" style="border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
 </div>
 
 <!--
