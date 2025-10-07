@@ -22,12 +22,12 @@ Our paper TrustGLM was accepted to KDD 2025.
 Publication
 ======
 ### TrustGLM: Evaluating the Robustness of GraphLLMs Against Prompt, Text, and Structure Attacks  
-Qihai Zhang*, **Xinyue Sheng**<sup>*</sup>, Yuanfu Sun, Qiaoyu Tan (*equal contribution)  
+Qihai Zhang*, **Xinyue Sheng**<sup>*</sup>, Yuanfu Sun, Qiaoyu Tan (<sup>*</sup>equal contribution)  
 *ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD)*, 2025  
 [Paper](https://arxiv.org/abs/2407.12345) · [Code](https://github.com/Palasonic5/TrustGLM.git)
 
 <div style="text-align: center; margin-top: 15px; margin-bottom: 20px;">
-  <img src="/images/trustglm.png" alt="TrustGLM Figure" width="420" style="border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+  <img src="/images/trustglm.png" alt="TrustGLM Figure" width="560" style="border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
 </div>
 
 <!--
