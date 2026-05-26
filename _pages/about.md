@@ -7,9 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I’m a senior pursuing B.S. in Data Science and Mathematics (Double Major) at New York University Shanghai and New York University. I was fortunate to work in DIRLab with [Prof. Qiaoyu Tan](https://qiaoyu-tan.github.io/) on Graph Foundation Models, Trustworthy AI, and Large Language Models.
-
-Currently, I am working on multimodal generative AI under the supervision of Prof. [Qiaoyu Tan](https://qiaoyu-tan.github.io/) and Prof. [Hongyi Wen](https://whongyi.github.io).
+Hi! I’m an incoming PhD student at the University of Michigan, Ann Arbor. Prior to that, I completed my undergraduate studies at New York University Shanghai, where I pursued a B.S. in Data Science and Mathematics and was fortunate to be advised by [Prof. Qiaoyu Tan](https://qiaoyu-tan.github.io/) and Prof. [Hongyi Wen](https://whongyi.github.io).
 
 My current research interests are Large Language Models, multimodal intelligence, trustworthy AI and graph learning.
 
