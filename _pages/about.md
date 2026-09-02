@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I’m an incoming PhD student at the University of Michigan, Ann Arbor. Prior to that, I completed my undergraduate studies at New York University Shanghai, where I pursued a B.S. in Data Science and Mathematics and was fortunate to be advised by [Prof. Qiaoyu Tan](https://qiaoyu-tan.github.io/).
+Hi! I’m a first-year PhD student at the University of Michigan, Ann Arbor, advised by [Prof. Danai Koutra](https://web.eecs.umich.edu/~dkoutra/). Prior to that, I pursued a B.S. in Data Science and Mathematics at NYU Shanghai and was fortunate to be advised by [Prof. Qiaoyu Tan](https://qiaoyu-tan.github.io/).
 
 My current research interests are Large Language Models, multimodal intelligence, trustworthy AI and graph learning.
 
