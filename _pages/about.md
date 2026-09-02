@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I’m an incoming PhD student at the University of Michigan, Ann Arbor. Prior to that, I completed my undergraduate studies at New York University Shanghai, where I pursued a B.S. in Data Science and Mathematics and was fortunate to be advised by [Prof. Qiaoyu Tan](https://qiaoyu-tan.github.io/) and Prof. [Hongyi Wen](https://whongyi.github.io).
+Hi! I’m an incoming PhD student at the University of Michigan, Ann Arbor. Prior to that, I completed my undergraduate studies at New York University Shanghai, where I pursued a B.S. in Data Science and Mathematics and was fortunate to be advised by [Prof. Qiaoyu Tan](https://qiaoyu-tan.github.io/).
 
 My current research interests are Large Language Models, multimodal intelligence, trustworthy AI and graph learning.
 
