@@ -1,0 +1,307 @@
+---
+layout: null
+permalink: /
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xinyue Sheng</title>
+  <meta name="description" content="Xinyue Sheng (盛欣悦) — PhD student at the University of Michigan working on LLMs, multimodal intelligence, trustworthy AI and graph learning.">
+  <meta property="og:title" content="Xinyue Sheng">
+  <meta property="og:description" content="PhD student at the University of Michigan · LLMs, multimodal & trustworthy AI, graph learning">
+  <meta property="og:image" content="https://xinyue-sheng.github.io/images/profile.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon-180x180.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+
+  <style>
+    :root {
+      --bg: #faf9f6;
+      --surface: #ffffff;
+      --text: #1c1d21;
+      --muted: #62646c;
+      --line: #e6e3dc;
+      --accent: #2f54c8;
+      --accent-soft: #e9eefc;
+      --tag: #f1efe9;
+      --shadow: 0 1px 2px rgba(20,20,30,.04), 0 8px 24px rgba(20,20,30,.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #111214; --surface: #18191c; --text: #e8e8ea; --muted: #9a9ca4;
+        --line: #2a2c31; --accent: #8aa6ff; --accent-soft: #1d2440; --tag: #222428;
+        --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #111214; --surface: #18191c; --text: #e8e8ea; --muted: #9a9ca4;
+      --line: #2a2c31; --accent: #8aa6ff; --accent-soft: #1d2440; --tag: #222428;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 16px/1.7 Inter, system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      transition: background .2s, color .2s;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    img { max-width: 100%; display: block; }
+
+    /* nav */
+    .nav {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 1040px; margin: 0 auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .brand { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 19px; color: var(--text); }
+    .brand:hover { text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 22px; font-size: 14.5px; }
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+    .theme-btn {
+      border: 1px solid var(--line); background: var(--surface); color: var(--muted);
+      width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 14px;
+    }
+    .theme-btn:hover { color: var(--text); }
+
+    /* layout */
+    .wrap {
+      max-width: 1040px; margin: 0 auto; padding: 56px 24px 40px;
+      display: grid; grid-template-columns: 260px 1fr; gap: 64px;
+    }
+    .wrap > *, .pub > * { min-width: 0; }
+    aside { position: sticky; top: 100px; align-self: start; }
+    .avatar {
+      width: 168px; height: 168px; border-radius: 50%; object-fit: cover;
+      border: 4px solid var(--surface); box-shadow: var(--shadow);
+    }
+    .name { font-family: Fraunces, Georgia, serif; font-size: 30px; font-weight: 600; line-height: 1.2; margin: 22px 0 2px; letter-spacing: -.01em; }
+    .cn-name { color: var(--muted); font-size: 15px; }
+    .role { margin: 14px 0 0; color: var(--muted); font-size: 14.5px; line-height: 1.55; }
+    .role strong { color: var(--text); font-weight: 500; }
+    .links { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 8px; font-size: 14.5px; }
+    .links a { color: var(--text); display: inline-flex; align-items: center; gap: 10px; }
+    .links i { width: 18px; text-align: center; color: var(--muted); }
+    .links a:hover i { color: var(--accent); }
+    .cv-btn {
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 22px;
+      padding: 8px 16px; border-radius: 999px; font-size: 14px; font-weight: 500;
+      background: var(--text); color: var(--bg);
+    }
+    .cv-btn:hover { text-decoration: none; opacity: .85; }
+
+    main section { margin-bottom: 56px; }
+    h2 {
+      font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 24px;
+      margin: 0 0 18px; letter-spacing: -.01em;
+    }
+    .intro { font-size: 17px; }
+    .intro p { margin: 0 0 14px; }
+    .interests { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .chip {
+      font-size: 13px; padding: 4px 12px; border-radius: 999px;
+      background: var(--accent-soft); color: var(--accent); font-weight: 500;
+    }
+
+    /* news */
+    .news { list-style: none; margin: 0; padding: 0; }
+    .news li { display: grid; grid-template-columns: 92px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px dashed var(--line); }
+    .news li:last-child { border-bottom: 0; }
+    .date { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; padding-top: 1px; }
+    .badge { font-size: 11.5px; font-weight: 600; padding: 2px 8px; border-radius: 6px; background: var(--accent); color: var(--bg); margin-right: 6px; vertical-align: 1px; }
+
+    /* publications */
+    .pub {
+      display: grid; grid-template-columns: 230px 1fr; gap: 24px;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+      padding: 18px; box-shadow: var(--shadow);
+    }
+    .pub-img { border-radius: 8px; overflow: hidden; border: 1px solid var(--line); background: #fff; align-self: start; }
+    .pub-img img { width: 100%; height: auto; }
+    .pub-venue { font-size: 12.5px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); }
+    .pub-title { font-weight: 600; font-size: 16.5px; line-height: 1.45; margin: 4px 0 6px; }
+    .pub-authors { font-size: 14.5px; color: var(--muted); margin: 0; }
+    .pub-authors .me { color: var(--text); font-weight: 600; }
+    .pub-meta { font-size: 14px; color: var(--muted); font-style: italic; margin: 4px 0 12px; }
+    .pub-links { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pub-links a {
+      font-size: 13px; padding: 4px 12px; border: 1px solid var(--line); border-radius: 999px;
+      color: var(--text); display: inline-flex; align-items: center; gap: 6px;
+    }
+    .pub-links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+    /* timeline list */
+    .items { list-style: none; margin: 0; padding: 0; }
+    .items li { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .items li:last-child { border-bottom: 0; }
+    .items .t { font-weight: 500; }
+    .items .s { color: var(--muted); font-size: 14.5px; grid-column: 1; }
+    .items .d { color: var(--muted); font-size: 14px; text-align: right; grid-row: 1; grid-column: 2; white-space: nowrap; }
+
+    footer { max-width: 1040px; margin: 0 auto; padding: 28px 24px 48px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+
+    @media (max-width: 860px) {
+      .wrap { grid-template-columns: 1fr; gap: 40px; padding-top: 36px; }
+      aside { position: static; text-align: center; }
+      .avatar { margin: 0 auto; width: 140px; height: 140px; }
+      .links { grid-template-columns: repeat(2, auto); justify-content: center; text-align: left; column-gap: 28px; }
+      .nav-links a.hide-sm { display: none; }
+      .pub { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .wrap, .nav-inner, footer { padding-left: 16px; padding-right: 16px; }
+      .nav-links { gap: 14px; }
+      .news li { grid-template-columns: 1fr; gap: 2px; }
+      .items li { grid-template-columns: 1fr; }
+      .items .d { grid-row: auto; grid-column: 1; text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#">Xinyue Sheng</a>
+    <div class="nav-links">
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a class="hide-sm" href="#talks">Talks</a>
+      <a class="hide-sm" href="#teaching">Teaching</a>
+      <a href="/files/CV.pdf">CV</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <aside>
+    <img class="avatar" src="/images/profile.png" alt="Xinyue Sheng">
+    <div class="name">Xinyue Sheng</div>
+    <div class="cn-name">盛欣悦 · she/her</div>
+    <p class="role"><strong>PhD Student</strong><br>University of Michigan, Ann Arbor</p>
+    <ul class="links">
+      <li><a href="mailto:xinyuesh@umich.edu"><i class="fa-regular fa-envelope"></i>Email</a></li>
+      <li><a href="https://scholar.google.com/citations?user=yzxwXcsAAAAJ&hl=en"><i class="fa-solid fa-graduation-cap"></i>Scholar</a></li>
+      <li><a href="https://github.com/Xinyue-Sheng"><i class="fa-brands fa-github"></i>GitHub</a></li>
+      <li><a href="https://orcid.org/0009-0006-2009-1044"><i class="fa-brands fa-orcid"></i>ORCID</a></li>
+    </ul>
+    <a class="cv-btn" href="/files/CV.pdf"><i class="fa-regular fa-file-lines"></i>Download CV</a>
+  </aside>
+
+  <main>
+    <section id="about" class="intro">
+      <p>Hi! I’m a first-year PhD student at the <strong>University of Michigan, Ann Arbor</strong>, advised by <a href="https://web.eecs.umich.edu/~dkoutra/">Prof. Danai Koutra</a>. Before that, I received my B.S. in Data Science and Mathematics from <strong>NYU Shanghai</strong>, where I was fortunate to be advised by <a href="https://qiaoyu-tan.github.io/">Prof. Qiaoyu Tan</a>.</p>
+      <p>My research interests include:</p>
+      <div class="interests">
+        <span class="chip">Large Language Models</span>
+        <span class="chip">Multimodal Intelligence</span>
+        <span class="chip">Trustworthy AI</span>
+        <span class="chip">Graph Learning</span>
+      </div>
+    </section>
+
+    <section id="news">
+      <h2>News</h2>
+      <ul class="news">
+        <li><span class="date">Sep 2026</span><span>Started my PhD at the University of Michigan, advised by Prof. Danai Koutra.</span></li>
+        <li><span class="date">Aug 2025</span><span>Gave an <strong>oral presentation</strong> of TrustGLM at KDD 2025 in Toronto, Canada.</span></li>
+        <li><span class="date">2025</span><span><span class="badge">KDD</span>Our paper <a href="#publications">TrustGLM</a> was accepted to KDD 2025!</span></li>
+      </ul>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <article class="pub">
+        <div class="pub-img"><img src="/images/trustglm.png" alt="TrustGLM overview figure" loading="lazy"></div>
+        <div>
+          <div class="pub-venue">KDD 2025 · Oral</div>
+          <div class="pub-title">TrustGLM: Evaluating the Robustness of GraphLLMs Against Prompt, Text, and Structure Attacks</div>
+          <p class="pub-authors">Qihai Zhang*, <span class="me">Xinyue Sheng*</span>, Yuanfu Sun, Qiaoyu Tan</p>
+          <p class="pub-meta">ACM SIGKDD Conference on Knowledge Discovery and Data Mining, 2025 &nbsp;·&nbsp; *equal contribution</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2506.11844"><i class="fa-regular fa-file-pdf"></i>Paper</a>
+            <a href="https://github.com/Palasonic5/TrustGLM"><i class="fa-brands fa-github"></i>Code</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="talks">
+      <h2>Talks</h2>
+      <ul class="items">
+        <li>
+          <span class="t">Oral Presentation: TrustGLM</span>
+          <span class="s">31st ACM SIGKDD Conference (KDD 2025) · Toronto, Canada</span>
+          <span class="d">Aug 2025</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <ul class="items">
+        <li>
+          <span class="t">Learning Assistant, Calculus</span>
+          <span class="s">Department of Mathematics, NYU Shanghai</span>
+          <span class="d">Spring 2024</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="items">
+        <li>
+          <span class="t">Ph.D. Student</span>
+          <span class="s">University of Michigan, Ann Arbor</span>
+          <span class="d">2026 – present</span>
+        </li>
+        <li>
+          <span class="t">B.S., Data Science and Mathematics</span>
+          <span class="s">New York University Shanghai</span>
+          <span class="d">2026</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+<footer>© 2026 Xinyue Sheng · Last updated Oct 2026</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('themeBtn'), icon = btn.querySelector('i');
+    function isDark() {
+      return root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    function sync() { icon.className = isDark() ? 'fa-solid fa-sun' : 'fa-solid fa-moon'; }
+    btn.addEventListener('click', function () {
+      root.dataset.theme = isDark() ? 'light' : 'dark';
+      try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+      sync();
+    });
+    sync();
+  })();
+</script>
+</body>
+</html>
