@@ -117,10 +117,19 @@
     .cn-name { color: var(--muted); font-size: 16.5px; }
     .role { margin: 14px 0 0; color: var(--muted); font-size: 16px; line-height: 1.55; }
     .role strong { color: var(--text); font-weight: 500; }
-    .links { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 8px; font-size: 16px; }
-    .links a { color: var(--text); display: inline-flex; align-items: center; gap: 10px; }
-    .links i { width: 18px; text-align: center; color: var(--muted); }
-    .links a:hover i { color: var(--accent); }
+    .links { list-style: none; padding: 0; margin: 22px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+    .links a {
+      position: relative; width: 40px; height: 40px; border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      border: 1px solid var(--line-strong); background: var(--surface); color: var(--muted); font-size: 17px;
+      transition: color .15s, border-color .15s;
+    }
+    .links a:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+    .links a.copied::after {
+      content: 'Copied!'; position: absolute; top: calc(100% + 6px); left: 50%; transform: translateX(-50%);
+      font-size: 12.5px; line-height: 1.6; padding: 1px 8px; border-radius: 6px; white-space: nowrap;
+      background: var(--text); color: var(--bg);
+    }
 
     main section { margin-bottom: 56px; }
     h2 {
@@ -139,6 +148,10 @@
     .news { list-style: none; margin: 0; padding: 0; }
     .news li { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px dashed var(--line); }
     .news li:last-child { border-bottom: 0; }
+    .news.collapsible:not(.expanded) li:nth-child(n+6) { display: none; }
+    .news.collapsible:not(.expanded) li:nth-child(5) { border-bottom: 0; }
+    .news-toggle { border: 0; background: none; padding: 8px 0 0; color: var(--accent); font: inherit; font-size: 15.5px; cursor: pointer; }
+    .news-toggle:hover { text-decoration: underline; text-underline-offset: 3px; }
     .date { color: var(--muted); font-size: 15.5px; font-variant-numeric: tabular-nums; padding-top: 1px; }
     .badge { font-size: 12.5px; font-weight: 600; padding: 2px 8px; border-radius: 6px; background: var(--accent); color: var(--bg); margin-right: 6px; vertical-align: 1px; }
 
@@ -206,7 +219,7 @@
       .wrap { grid-template-columns: 1fr; gap: 40px; padding-top: 36px; }
       aside { position: static; text-align: center; }
       .avatar { margin: 0 auto; width: 140px; height: 140px; }
-      .links { grid-template-columns: repeat(2, auto); justify-content: center; text-align: left; column-gap: 28px; }
+      .links { justify-content: center; }
       .pub { grid-template-columns: 1fr; gap: 16px; } .pub-side { max-width: 320px; }
     }
     @media (max-width: 480px) {
@@ -243,11 +256,11 @@
     <div class="cn-name">盛欣悦 · she/her</div>
     <p class="role"><strong>PhD Student</strong><br>University of Michigan, Ann Arbor</p>
     <ul class="links">
-      <li><a id="emailLink" href="mailto:xinyuesh@umich.edu" title="xinyuesh@umich.edu"><i class="fa-regular fa-envelope"></i><span>Email</span></a></li>
-      <li><a href="https://scholar.google.com/citations?user=yzxwXcsAAAAJ&hl=en"><i class="fa-solid fa-graduation-cap"></i>Scholar</a></li>
-      <li><a href="https://github.com/Xinyue-Sheng"><i class="fa-brands fa-github"></i>GitHub</a></li>
-      <li><a href="https://x.com/XinyueShen24102"><i class="fa-brands fa-x-twitter"></i>X</a></li>
-      <li><a href="https://www.linkedin.com/in/xinyue-sheng-482a83271/"><i class="fa-brands fa-linkedin"></i>LinkedIn</a></li>
+      <li><a href="mailto:xinyuesh@umich.edu" title="Email · xinyuesh@umich.edu (click to copy)" aria-label="Email"><i class="fa-regular fa-envelope"></i></a></li>
+      <li><a href="https://scholar.google.com/citations?user=yzxwXcsAAAAJ&hl=en" title="Google Scholar" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a></li>
+      <li><a href="https://github.com/Xinyue-Sheng" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
+      <li><a href="https://x.com/XinyueShen24102" title="X" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></li>
+      <li><a href="https://www.linkedin.com/in/xinyue-sheng-482a83271/" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
     </ul>
   </aside>{% endif %}
 
@@ -321,15 +334,27 @@
   })();
   (function () {
     document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
-      var label = a.querySelector('span') || a, orig = label.textContent, t;
-      var done = a.querySelector('span') ? 'Copied!' : orig + ' (address copied!)';
+      var icon = !!a.closest('.links'), orig = a.textContent, t;
       a.addEventListener('click', function () {
         var addr = a.getAttribute('href').replace('mailto:', '');
-        if (navigator.clipboard) navigator.clipboard.writeText(addr).then(function () {
-          label.textContent = done; clearTimeout(t);
-          t = setTimeout(function () { label.textContent = orig; }, 1600);
+        if (!navigator.clipboard) return;
+        navigator.clipboard.writeText(addr).then(function () {
+          clearTimeout(t);
+          if (icon) a.classList.add('copied'); else a.textContent = orig + ' (address copied!)';
+          t = setTimeout(function () { if (icon) a.classList.remove('copied'); else a.textContent = orig; }, 1600);
         }, function () {});
       });
+    });
+
+    document.querySelectorAll('.news').forEach(function (ul) {
+      if (ul.children.length <= 5) return;
+      ul.classList.add('collapsible');
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'news-toggle'; b.textContent = 'Show more';
+      b.addEventListener('click', function () {
+        b.textContent = ul.classList.toggle('expanded') ? 'Show less' : 'Show more';
+      });
+      ul.parentNode.insertBefore(b, ul.nextSibling);
     });
   })();
 </script>
