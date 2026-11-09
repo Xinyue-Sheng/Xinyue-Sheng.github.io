@@ -153,6 +153,10 @@ permalink: /
     }
     .pub-img { border-radius: 6px; overflow: hidden; border: 1px solid var(--line); background: #fff; }
     .pub-img img { width: 100%; height: auto; }
+    .pub-img button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+    .pub-img button img { transition: opacity .2s; }
+    .pub-img button:hover img { opacity: .85; }
+    #figbox img { background: #fff; max-width: 96vw; max-height: 92vh; }
     .pub-title { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 18.5px; line-height: 1.4; margin: 0 0 6px; }
     .pub-authors { font-size: 15px; color: var(--muted); margin: 0; }
     .pub-authors .me { color: var(--text); font-weight: 600; }
@@ -271,7 +275,7 @@ permalink: /
       <article class="pub">
         <div class="pub-side">
           <div class="pub-venue">KDD 2025</div>
-          <div class="pub-img"><img src="/images/trustglm.png" alt="TrustGLM overview figure" loading="lazy"></div>
+          <div class="pub-img"><button type="button" aria-label="Enlarge figure"><img src="/images/trustglm.png" alt="TrustGLM overview figure" loading="lazy"></button></div>
         </div>
         <div>
           <div class="pub-title">TrustGLM: Evaluating the Robustness of GraphLLMs Against Prompt, Text, and Structure Attacks</div>
@@ -312,14 +316,14 @@ permalink: /
       <p class="misc-note">Some photos I took.</p>
       <div class="gallery">
         <button type="button"><img src="/images/photos/photo-01.jpg" width="1800" height="1200" alt="Photo by Xinyue Sheng" loading="lazy"></button>
-        <button type="button"><img src="/images/photos/photo-02.jpg" width="1199" height="1800" alt="Photo by Xinyue Sheng" loading="lazy"></button>
         <button type="button"><img src="/images/photos/photo-03.jpg" width="1800" height="1200" alt="Photo by Xinyue Sheng" loading="lazy"></button>
         <button type="button"><img src="/images/photos/photo-04.jpg" width="1800" height="1199" alt="Photo by Xinyue Sheng" loading="lazy"></button>
-        <button type="button"><img src="/images/photos/photo-05.jpg" width="1200" height="1800" alt="Photo by Xinyue Sheng" loading="lazy"></button>
         <button type="button"><img src="/images/photos/photo-06.jpg" width="1800" height="1200" alt="Photo by Xinyue Sheng" loading="lazy"></button>
         <button type="button"><img src="/images/photos/photo-07.jpg" width="1200" height="1800" alt="Photo by Xinyue Sheng" loading="lazy"></button>
-        <button type="button"><img src="/images/photos/photo-08.jpg" width="1800" height="1200" alt="Photo by Xinyue Sheng" loading="lazy"></button>
-        <button type="button"><img src="/images/photos/photo-09.jpg" width="1800" height="1200" alt="Photo by Xinyue Sheng" loading="lazy"></button>
+        <button type="button"><img src="/images/photos/photo-10.jpg" width="1198" height="1800" alt="Photo by Xinyue Sheng" loading="lazy"></button>
+        <button type="button"><img src="/images/photos/photo-11.jpg" width="1200" height="1800" alt="Photo by Xinyue Sheng" loading="lazy"></button>
+        <button type="button"><img src="/images/photos/photo-12.jpg" width="1800" height="1200" alt="Photo by Xinyue Sheng" loading="lazy"></button>
+        <button type="button"><img src="/images/photos/photo-13.jpg" width="1800" height="1200" alt="Photo by Xinyue Sheng" loading="lazy"></button>
       </div>
     </section>
 
@@ -331,6 +335,11 @@ permalink: /
   <button class="lb-btn lb-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
   <button class="lb-btn lb-prev" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
   <button class="lb-btn lb-next" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+
+<div class="lightbox" id="figbox" role="dialog" aria-modal="true" aria-label="Figure viewer">
+  <img alt="">
+  <button class="lb-btn lb-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
 </div>
 
 <footer>© 2026 Xinyue Sheng · Last updated Oct 2026</footer>
@@ -368,6 +377,21 @@ permalink: /
       else if (e.key === 'ArrowLeft') show(cur - 1);
       else if (e.key === 'ArrowRight') show(cur + 1);
     });
+  })();
+
+  (function () {
+    var fb = document.getElementById('figbox'), big = fb.querySelector('img');
+    function close() { fb.classList.remove('open'); document.body.style.overflow = ''; }
+    document.querySelectorAll('.pub-img button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var im = b.querySelector('img');
+        big.src = im.getAttribute('src'); big.alt = im.alt;
+        fb.classList.add('open'); document.body.style.overflow = 'hidden';
+      });
+    });
+    fb.querySelector('.lb-close').addEventListener('click', close);
+    fb.addEventListener('click', function (e) { if (e.target === fb) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && fb.classList.contains('open')) close(); });
   })();
 </script>
 </body>
