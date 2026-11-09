@@ -320,14 +320,16 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && fb.classList.contains('open')) close(); });
   })();
   (function () {
-    var a = document.getElementById('emailLink'); if (!a) return;
-    var label = a.querySelector('span'), t;
-    a.addEventListener('click', function () {
-      var addr = a.getAttribute('href').replace('mailto:', '');
-      if (navigator.clipboard) navigator.clipboard.writeText(addr).then(function () {
-        label.textContent = 'Copied!'; clearTimeout(t);
-        t = setTimeout(function () { label.textContent = 'Email'; }, 1600);
-      }, function () {});
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+      var label = a.querySelector('span') || a, orig = label.textContent, t;
+      var done = a.querySelector('span') ? 'Copied!' : orig + ' (address copied!)';
+      a.addEventListener('click', function () {
+        var addr = a.getAttribute('href').replace('mailto:', '');
+        if (navigator.clipboard) navigator.clipboard.writeText(addr).then(function () {
+          label.textContent = done; clearTimeout(t);
+          t = setTimeout(function () { label.textContent = orig; }, 1600);
+        }, function () {});
+      });
     });
   })();
 </script>
