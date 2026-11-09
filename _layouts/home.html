@@ -106,6 +106,7 @@
       max-width: 1040px; margin: 0 auto; padding: 56px 24px 40px;
       display: grid; grid-template-columns: 260px 1fr; gap: 64px;
     }
+    .wrap.no-side { grid-template-columns: 1fr; }
     .wrap > *, .pub > * { min-width: 0; }
     aside { position: sticky; top: 100px; align-self: start; }
     .avatar {
@@ -223,7 +224,7 @@
 <nav class="nav">
   <div class="nav-inner">
     <div class="nav-links">
-      <a href="/"{% if page.url == "/" %} class="active"{% endif %}>Home</a>
+      <a href="/"{% if page.url == "/" %} class="active"{% endif %}>Intro</a>
       <a href="/publications/"{% if page.url == "/publications/" %} class="active"{% endif %}>Publications</a>
       <a href="/talks/"{% if page.url == "/talks/" %} class="active"{% endif %}>Talks</a>
       <a href="/tutoring/"{% if page.url == "/tutoring/" %} class="active"{% endif %}>Tutoring</a>
@@ -234,8 +235,9 @@
   </div>
 </nav>
 
-<div class="wrap">
-  <aside>
+{% assign is_intro = false %}{% if page.url == "/" %}{% assign is_intro = true %}{% endif %}
+<div class="wrap{% unless is_intro %} no-side{% endunless %}">
+  {% if is_intro %}<aside>
     <img class="avatar" src="/images/avatar.jpg" alt="Xinyue Sheng">
     <div class="name">Xinyue Sheng</div>
     <div class="cn-name">盛欣悦 · she/her</div>
@@ -246,7 +248,7 @@
       <li><a href="https://github.com/Xinyue-Sheng"><i class="fa-brands fa-github"></i>GitHub</a></li>
       <li><a href="https://orcid.org/0009-0006-2009-1044"><i class="fa-brands fa-orcid"></i>ORCID</a></li>
     </ul>
-  </aside>
+  </aside>{% endif %}
 
   <main>
 {{ content }}
